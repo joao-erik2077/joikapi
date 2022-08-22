@@ -1,12 +1,15 @@
 package br.com.joik.joikapi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="curso")
 public class Curso {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
     private String nomecurso;
 
     public Long getId() {
