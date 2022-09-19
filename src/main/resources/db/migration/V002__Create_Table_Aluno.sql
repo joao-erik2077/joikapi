@@ -1,6 +1,9 @@
 CREATE TABLE IF NOT EXISTS Aluno (
     id BIGINT NOT NULL AUTO_INCREMENT,
-    nomealuno VARCHAR(255) NOT NULL,
-    curso BIGINT NOT NULL,
+    nomeAluno VARCHAR(255) NOT NULL,
+    cursoId BIGINT NOT NULL,
     PRIMARY KEY(id)
 );
+
+ALTER TABLE Aluno ADD CONSTRAINT fk_aluno_curso
+FOREIGN KEY(cursoId) REFERENCES Curso(id);
