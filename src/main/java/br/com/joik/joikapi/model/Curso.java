@@ -1,5 +1,7 @@
 package br.com.joik.joikapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ public class Curso {
     private String nomecurso;
 
     @OneToMany(mappedBy = "curso")
+    @JsonIgnore
     private List<Aluno> alunos = new ArrayList<>();
 
     public Long getId() {
